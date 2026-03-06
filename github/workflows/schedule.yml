@@ -1,0 +1,15 @@
+name: Scheduled Site Update
+on:
+  schedule:
+    - cron: '0 0 * * *' # This runs every day at 00:00 UTC
+  workflow_dispatch: # This allows you to also run it manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Trigger
+        uses: actions/checkout@v4
+      - name: Refresh Site
+        run: |
+          echo "Last automation run: $(date)" > automation_log.txt
