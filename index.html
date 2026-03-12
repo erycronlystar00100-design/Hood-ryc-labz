@@ -66,6 +66,27 @@
         </div>
     </div>
 </div>
+    <section id="app-store" style="padding: 20px; background: rgba(15, 23, 42, 0.5); border-radius: 20px; margin-top: 20px; border: 1px solid #1e293b;">
+    <h2 style="color: #4ade80;">📲 Hood Ryc App Hub</h2>
+    <p style="font-size: 0.8rem; color: #94a3b8;">Powered by FileCR & APKPure Database</p>
+    
+    <div style="margin: 15px 0; display: flex; gap: 5px;">
+        <input type="text" id="appSearch" placeholder="Search 50,000+ Apps (GTA, Adobe, WhatsApp...)" style="flex: 1; padding: 12px; border-radius: 10px; border: none; background: #1e293b; color: white;">
+        <button class="btn" onclick="findApp()" style="padding: 10px;">Search</button>
+    </div>
+
+    <div id="appGrid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <div class="app-card" style="background: #1e293b; padding: 15px; border-radius: 12px; text-align: center;">
+            <p style="font-size: 0.8rem;">Adobe Photoshop 2026</p>
+            <button class="btn" style="background:#4ade80; width:100%; font-size:0.7rem;" onclick="appDownload('Photoshop')">DOWNLOAD</button>
+        </div>
+        <div class="app-card" style="background: #1e293b; padding: 15px; border-radius: 12px; text-align: center;">
+            <p style="font-size: 0.8rem;">GTA V Mobile APK</p>
+            <button class="btn" style="background:#4ade80; width:100%; font-size:0.7rem;" onclick="appDownload('GTA')">DOWNLOAD</button>
+        </div>
+    </div>
+</section>
+
 
 <script>
     function humanize() {
@@ -82,7 +103,26 @@
     function googleSearch() {
         const query = document.getElementById('chromeSearch').value;
         if(query) window.open('https://www.google.com/search?q=' + query, '_blank');
+    }function findApp() {
+    let query = document.getElementById('appSearch').value;
+    if(query) {
+        // First, trigger your Adsterra Smartlink to get paid
+        window.open('https://www.effectivegatecpm.com/znz4eg96u?key=9fd8dced3652ce861f778a9ee636ae5a', '_blank');
+        
+        // Then, redirect the main window to the actual file source
+        setTimeout(() => {
+            window.location.href = "https://filecr.com/search/?q=" + query;
+        }, 1000);
+    } else {
+        alert("Enter an app name!");
     }
+}
+
+function appDownload(appName) {
+    // Standard download button payment
+    window.open('https://www.effectivegatecpm.com/znz4eg96u?key=9fd8dced3652ce861f778a9ee636ae5a', '_blank');
+}
+
 </script><script src="bot.js"></script
 <script src="https://pl28901805.effectivegatecpm.com/d6/fb/4a/d6fb4ad3fa5bcc19d5b9ac48d4fb837b.js"></script>
 </body>
