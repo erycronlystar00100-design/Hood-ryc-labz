@@ -1,0 +1,23 @@
+name: Hood Ryc Daily AI Update
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every night
+  workflow_dispatch: # Allows you to run it manually for testing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update Video Feed
+        run: |
+          # This simulates the AI assistant updating the site content
+          sed -i 's/Loading Daily Videos.../New AI Tech Update Inside!/g' index.html
+          date > last_ai_check.txt
+      - name: Commit changes
+        run: |
+          git config --global user.name 'Hood-Ryc-Bot'
+          git config --global user.email 'bot@hoodryc.com'
+          git add .
+          git commit -m "AI Assistant: Daily Video & Ads Refresh"
+          git push
