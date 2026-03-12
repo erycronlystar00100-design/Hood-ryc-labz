@@ -1,0 +1,15 @@
+// Hood Ryc AI Assistant - Auto-Content Logic
+console.log("AI Assistant: Online");
+
+const techAlerts = [
+    "● AI Assistant: Scanning for new Tech Trends...",
+    "● AI Assistant: Updating Daily PC Speed Scripts...",
+    "● AI Assistant: New Gaming Short added to feed!"
+];
+
+setInterval(() => {
+    const status = document.getElementById('ai-status');
+    if(status) {
+        status.innerText = techAlerts[Math.floor(Math.random() * techAlerts.length)];
+    }
+}, 8000);
