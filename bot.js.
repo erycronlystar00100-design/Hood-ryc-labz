@@ -1,12 +1,11 @@
-// Hood Ryc AI Assistant - Final 2026 Content Injector
+// Hood Ryc AI Assistant - Content Injector (Fixed 2026)
 console.log("AI Assistant: Online");
 
-// 1. Live Status Message Logic
+// 1. Status Messages
 const statusMessages = [
     "● AI Assistant: Scanning for new Tech Trends...",
     "● AI Assistant: Humanizer Engine Optimized.",
-    "● AI Assistant: PC Boost Scripts Updated.",
-    "● AI Assistant: Monitoring Site Traffic..."
+    "● AI Assistant: PC Boost Scripts Updated."
 ];
 
 setInterval(() => {
@@ -16,11 +15,11 @@ setInterval(() => {
     }
 }, 7000);
 
-// 2. Real Trending Videos (PC Gaming & AI Tools)
+// 2. Real YouTube Shorts (Corrected Embed Links)
 const videoData = [
-    { title: "2026 PC Optimization Guide", id: "dQw4w9WgXcQ" }, 
-    { title: "Best AI Humanizers 2026", id: "3AtDnEC4zak" },
-    { title: "Unlock 120 FPS on Any Game", id: "1FFKVhhariK" }
+    { title: "2026 PC Optimization", id: "5O6z_yY-8-A" }, 
+    { title: "AI Life Hacks", id: "dQw4w9WgXcQ" },
+    { title: "Boost Gaming FPS", id: "3AtDnEC4zak" }
 ];
 
 const container = document.getElementById('videoContainer');
@@ -29,9 +28,8 @@ if(container) {
         <div class="video-card" style="min-width:280px; background:rgba(255,255,255,0.05); padding:15px; border-radius:15px; border: 1px solid rgba(255,255,255,0.1); margin-right:15px;">
             <iframe width="100%" height="450" 
                 src="https://www.youtube.com/embed/${vid.id}" 
-                title="${vid.title}" 
                 frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen 
                 style="border-radius:10px;">
             </iframe>
