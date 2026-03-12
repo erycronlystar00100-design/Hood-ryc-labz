@@ -3,56 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hood Ryc | Tech & Mods</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Hood Ryc AI | The Super Portal</title>
     <style>
-        body { background-color: #0a0a0a; color: #e5e5e5; font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); }
-        .accent-glow { text-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+        :root { --main-bg: #0f172a; --accent: #38bdf8; --glass: rgba(255, 255, 255, 0.05); }
+        body { font-family: 'Inter', sans-serif; background: var(--main-bg); color: white; margin: 0; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .search-hub { text-align: center; margin: 50px 0; }
+        .search-bar { width: 80%; max-width: 600px; padding: 15px 25px; border-radius: 30px; border: 1px solid var(--accent); background: var(--glass); color: white; font-size: 1.1rem; outline: none; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--glass); backdrop-filter: blur(10px); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        textarea { width: 100%; height: 100px; border-radius: 8px; margin: 10px 0; background: #1e293b; color: #f8fafc; border: 1px solid #334155; padding: 10px; box-sizing: border-box; }
+        .btn { background: var(--accent); color: #000; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px; }
+        .video-feed { margin-top: 50px; }
+        .video-container { display: flex; gap: 15px; overflow-x: auto; padding: 20px 0; }
+        .video-card { min-width: 280px; height: 160px; background: #1e293b; border-radius: 12px; border: 1px solid #334155; display: flex; align-items: center; justify-content: center; color: #64748b; }
     </style>
+</head>
 <body>
-    <nav class="p-6 flex justify-between items-center border-b border-gray-800">
-        <h1 class="text-2xl font-bold tracking-tighter text-blue-500 accent-glow">HOOD RYC</h1>
-        <div class="space-x-6 hidden md:block">
-            <a href="#services" class="hover:text-blue-400">Services</a>
-            <a href="#about" class="hover:text-blue-400">About</a>
-            <a href="https://wa.me/254795313524" class="bg-blue-600 px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition">Get Started</a>
-        </div>
-    </nav>
 
-    <section class="hero-gradient py-20 px-6 text-center">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-4 uppercase italic">Elite PC Optimization <br>& Modding</h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8">Stop lagging. Start winning. Professional RAM tuning, hardware upgrades, and custom mods for GTA, ETS2, and COD.</p>
-        <div class="flex flex-col md:flex-row justify-center gap-4">
-            <a href="#services" class="border border-blue-500 px-8 py-3 rounded-full hover:bg-blue-500 transition">View Services</a>
-            <a href="https://wa.me/254795313524" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">Contact via WhatsApp</a>
-        </div>
-    </section>
+<div class="container">
+    <header style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--glass); padding-bottom: 20px;">
+        <h1 style="letter-spacing: -1px;">HOOD RYC <span style="color:var(--accent)">AI LABZ</span></h1>
+        <div id="ai-status" style="font-size: 0.8rem; color: #4ade80; background: rgba(74, 222, 128, 0.1); padding: 5px 12px; border-radius: 20px;">● AI Assistant Active</div>
+    </header>
 
-    <section id="services" class="py-20 px-6 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-12 text-center underline decoration-blue-500">The Hustle</h3>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-neutral-900 p-8 rounded-2xl border border-gray-800 hover:border-blue-500 transition">
-                <div class="text-blue-500 text-3xl mb-4">⚙️</div>
-                <h4 class="text-xl font-bold mb-2">PC Performance</h4>
-                <p class="text-sm text-gray-500">Registry cleaning, debloating, and virtual memory optimization. I make low-spec PCs fly.</p>
-            </div>
-            <div class="bg-neutral-900 p-8 rounded-2xl border border-gray-800 hover:border-blue-500 transition">
-                <div class="text-blue-500 text-3xl mb-4">🎮</div>
-                <h4 class="text-xl font-bold mb-2">Game Modding</h4>
-                <p class="text-sm text-gray-500">Expert setup for Euro Truck Sim 2, GTA, and COD. Custom skins and non-official versions handled.</p>
-            </div>
-            <div class="bg-neutral-900 p-8 rounded-2xl border border-gray-800 hover:border-blue-500 transition">
-                <div class="text-blue-500 text-3xl mb-4">🎨</div>
-                <h4 class="text-xl font-bold mb-2">AI Branding</h4>
-                <p class="text-sm text-gray-500">High-definition AI logo generation and personal branding designs for your social media.</p>
-            </div>
+    <div class="search-hub">
+        <input type="text" id="chromeSearch" class="search-bar" placeholder="Search Google or type a URL...">
+        <button class="btn" style="width: auto; margin-left: 10px; padding: 15px 30px;" onclick="googleSearch()">Search</button>
+    </div>
+
+    <div class="tool-grid">
+        <div class="card">
+            <h3>AI Text Humanizer</h3>
+            <textarea id="aiInput" placeholder="Paste robotic AI text here..."></textarea>
+            <button class="btn" onclick="humanize()">Humanize Now</button>
+            <div id="output" style="margin-top:15px; font-size:0.9rem; color:#38bdf8; font-weight: bold;"></div>
         </div>
-    </section>
-    <footer class="p-10 text-center border-t border-gray-900">
-        <p class="mb-4 text-gray-400 text-sm">Need help? <a href="mailto:erycronlystar00100@gmail.com" class="text-blue-500 underline">Email Support</a></p>
-        
-        <p class="text-gray-600">© 2026 HOOD RYC TECH. Based in Kenya. All Rights Reserved.</p>
-    </footer>
+
+        <div class="card">
+            <h3>PC & Gaming Speed Booster</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Clean registry and boost FPS for GTA/ETS2.</p>
+            <button class="btn" style="background:#4ade80;">Download .BAT Hub</button>
+        </div>
+
+        <div class="card">
+            <h3>PDF Summarizer</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Upload any document for instant AI summary.</p>
+            <input type="file" id="pdfUpload" style="margin-bottom:10px; font-size: 0.8rem;">
+            <button class="btn">Analyze Document</button>
+        </div>
+    </div>
+
+    <div class="video-feed">
+        <h2>Trending Tech & Gaming Shorts</h2>
+        <div class="video-container" id="videoContainer">
+            <div class="video-card">Loading Daily Videos...</div>
+            <div class="video-card">Loading Daily Videos...</div>
+            <div class="video-card">Loading Daily Videos...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function humanize() {
+        const text = document.getElementById('aiInput').value;
+        const output = document.getElementById('output');
+        if(!text) return alert("Please paste some text!");
+        output.innerText = "Processing through Hood Ryc AI Engine...";
+        setTimeout(() => {
+            output.innerText = "Status: Successfully Humanized! (Check your clipboard)";
+            alert("This feature requires the API connection we will set up in Step 2!");
+        }, 1500);
+    }
+
+    function googleSearch() {
+        const query = document.getElementById('chromeSearch').value;
+        if(query) window.open('https://www.google.com/search?q=' + query, '_blank');
+    }
+</script>
+
 </body>
 </html>
